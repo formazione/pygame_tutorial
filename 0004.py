@@ -1,7 +1,7 @@
 import pygame
 from glob import glob
 import sys
-
+from widgets import *
 
 pygame.init()
 screen = pygame.display.set_mode((400, 600))
