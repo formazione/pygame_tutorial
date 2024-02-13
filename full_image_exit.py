@@ -4,14 +4,14 @@ import pygame
 
 pygame.init()
 
-wh = width, height = pygame.display.get_desktop_sizes()[0]
+wh = width, height = 800,600#pygame.display.get_desktop_sizes()[0]
 print(width, height)
 
-screen = pygame.display.set_mode((wh), pygame.FULLSCREEN)
-
+screen = pygame.display.set_mode((wh), )#pygame.FULLSCREEN)
+clock = pygame.time.Clock()
 
 def bg():
-    image = pygame.image.load("image.jpg")
+    image = pygame.image.load("image.png")
     image_scaled = pygame.transform.scale(image, (wh))
     screen.blit(image_scaled, (0, 0))  # Or use image if not scaled
 
@@ -46,6 +46,6 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if exit_button_rect.collidepoint(event.pos):
                 running = False
-
+    clock.tick(10)
 
 pygame.quit()
